@@ -5,25 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Game Steam Ihsan</title>
+<style>
+table {
+    border-collapse :collapse;
+}
+table, th, td {
+    border : 1px solid #1c1b18;
+}
+</style>
 </head>
 <body>
     <h1>Katalog Game Steam Ihsan</h1>
 
     <div class="wrapper">
-        <div class="list">
-            <% var i=1;  games.forEach(function(game) { %>
-                <div class="item">
-                    <b class="content-font">No. <%= i %></b>
-                    <p class="content-font">Nama game : <%= game.name %></p>
-                    <p class="content-font">Tanggal rilis : <%= game.release_date %></p>
-                    <p class="content-font">Nama developer : <%= game.developer_name %></p>
-                    <p class="content-font">Lokasi developer: <%= game.developer_location %></p>
-                    <p class="content-font">Nama publisher : <%= game.publisher_name %></p>
-                    <p class="content-font">Lokasi publisher : <%= game.publisher_location %></p>
-                </div>
-                <% i++; %>
-                <% }); %>
-        </div>
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>Nama Game</th>
+                <th>Tanggal rilis</th>
+                <th>Nama developer</th>
+                <th>Lokasi developer</th>
+                <th>Nama publisher</th>
+                <th>Lokasi publisher</th>
+            </tr>
+                <% var i=1;  games.forEach(function(game) { %>
+                    <tr>
+                        <td> <%= i %> </td>
+                        <td> <%= game.name %> </td>
+                        <td> <%= game.release_date %> </td>
+                        <td> <%= game.developer_name %> </td>
+                        <td> <%= game.developer_location %> </td>
+                        <td> <%= game.publisher_name %> </td>
+                        <td> <%= game.publisher_location %> </td>
+                    </tr>
+                    <% i++; %>
+                    <% }); %>
+        </table>
     </div>
 </body>
 </html>
