@@ -1,0 +1,189 @@
+@prefix : <http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.ihsansteamgames.com/ontologies/2022/4/steam-games> .
+
+<http://www.ihsansteamgames.com/ontologies/2022/4/steam-games> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#developed
+:developed rdf:type owl:ObjectProperty ;
+           owl:inverseOf :developedBy ;
+           rdfs:domain :Developer ;
+           rdfs:range :Games .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#developedBy
+:developedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Games ;
+             rdfs:range :Developer .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#published
+:published rdf:type owl:ObjectProperty ;
+           owl:inverseOf :publishedBy ;
+           rdfs:domain :Publisher ;
+           rdfs:range :Games .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#publishedBy
+:publishedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Games ;
+             rdfs:range :Publisher .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#category
+:category rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#developer-location
+:developer-location rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#developer-name
+:developer-name rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#name
+:name rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#publisher-location
+:publisher-location rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#publisher-name
+:publisher-name rdf:type owl:DatatypeProperty .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#release_date
+:release_date rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer
+:Developer rdf:type owl:Class .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Games
+:Games rdf:type owl:Class .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Publisher
+:Publisher rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer1
+:Developer1 rdf:type owl:NamedIndividual ;
+            :developed :Game1 ,
+                       :Game2 ;
+            :developer-name "Valve" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer2
+:Developer2 rdf:type owl:NamedIndividual ;
+            :developed :Game3 ;
+            :developer-name "Firaxis Games" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer3
+:Developer3 rdf:type owl:NamedIndividual ;
+            :developed :Game4 ;
+            :developer-name "Gearbox Software" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer4
+:Developer4 rdf:type owl:NamedIndividual ,
+                     :Developer ;
+            :developed :Game5 ,
+                       :Game6 ;
+            :developer-name "Digital Extremes" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game1
+:Game1 rdf:type owl:NamedIndividual ,
+                :Games ;
+       :developedBy :Developer1 ;
+       :publishedBy :Publisher1 ;
+       :name "Counter Strike : Global Offensive" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game2
+:Game2 rdf:type owl:NamedIndividual ,
+                :Games ;
+       :developedBy :Developer1 ;
+       :publishedBy :Publisher1 ;
+       :name "Dota 2" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game3
+:Game3 rdf:type owl:NamedIndividual ,
+                :Games ;
+       :developedBy :Developer2 ;
+       :publishedBy :Publisher2 ;
+       :name "XCOM 2" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game4
+:Game4 rdf:type owl:NamedIndividual ,
+                :Games ;
+       :developedBy :Developer3 ;
+       :publishedBy :Publisher2 ;
+       :name "Borderlands 3" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game5
+:Game5 rdf:type owl:NamedIndividual ,
+                :Games ;
+       :developedBy :Developer4 ;
+       :publishedBy :Publisher3 ;
+       :name "Warframe" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game6
+:Game6 rdf:type owl:NamedIndividual ,
+                :Games ;
+       :developedBy :Developer4 ;
+       :publishedBy :Publisher2 ;
+       :name "Bioshock 2" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Publisher1
+:Publisher1 rdf:type owl:NamedIndividual ;
+            :published :Game1 ,
+                       :Game2 ;
+            :publisher-name "Valve" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Publisher2
+:Publisher2 rdf:type owl:NamedIndividual ;
+            :published :Game3 ,
+                       :Game4 ,
+                       :Game6 ;
+            :publisher-name "2K" .
+
+
+###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Publisher3
+:Publisher3 rdf:type owl:NamedIndividual ;
+            :published :Game5 ;
+            :publisher-name "Digital Extremes" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Game Steam Ihsan</title>
+</head>
+<body>
+    <h1>Katalog Game Steam Ihsan</h1>
+
+    <div class="wrapper">
+        <div class="list">
+            <% var i=1;  games.forEach(function(game) { %>
+                <div class="item">
+                    <b class="content-font">No. <%= i %></b>
+                    <p class="content-font">Nama game : <%= game.name %></p>
+                    <p class="content-font">Tanggal rilis : <%= game.release_date %></p>
+                    <p class="content-font">Nama developer : <%= game.developer_name %></p>
+                    <p class="content-font">Lokasi developer: <%= game.developer_location %></p>
+                    <p class="content-font">Nama publisher : <%= game.publisher_name %></p>
+                    <p class="content-font">Lokasi publisher : <%= game.publisher_location %></p>
+                </div>
+                <% i++; %>
+                <% }); %>
+        </div>
+    </div>
+</body>
+</html>
