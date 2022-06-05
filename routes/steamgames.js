@@ -10,17 +10,23 @@ router.get('/', async(req, res) => {
     prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    SELECT ?name ?publisher_name ?developer_name
+    SELECT ?name ?release_date  ?category ?publisher_name ?publisher_location ?developer_name ?developer_location
     WHERE{
       ?id a :Games .
       ?id :name ?name .
       ?id :publishedBy ?publisher .
       ?id :developedBy ?developer .
+  	  ?id :release_date ?release_date .
+  	  ?id :category ?category .
       ?developer :developer-name ?developer_name .
+  	  ?developer :developer-location ?developer_location .
       ?publisher :publisher-name ?publisher_name .
-    } LIMIT 1000
+  	  ?publisher :publisher-location ?publisher_location .
+    } 
+    ORDER BY ?name
+    LIMIT 1000
     `;
-    var sparqlEndpoint = 'http://localhost:3030/steam/sparql';
+    var sparqlEndpoint = 'http://localhost:3030/steamgames/sparql';
     
     d3.sparql(sparqlEndpoint, Query).then((results) => {
       console.log(results);
@@ -47,14 +53,18 @@ router.post('/', async(req, res) => {
     prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    SELECT ?name ?publisher_name ?developer_name
+    SELECT ?name ?release_date  ?category ?publisher_name ?publisher_location ?developer_name ?developer_location
     WHERE{
       ?id a :Games .
       ?id :name ?name .
       ?id :publishedBy ?publisher .
       ?id :developedBy ?developer .
+  	  ?id :release_date ?release_date .
+  	  ?id :category ?category .
       ?developer :developer-name ?developer_name .
+  	  ?developer :developer-location ?developer_location .
       ?publisher :publisher-name ?publisher_name .
+  	  ?publisher :publisher-location ?publisher_location .
       FILTER regex(?name, "${find}", "i")
     } LIMIT 1000
     `

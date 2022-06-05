@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Game Steam Ihsan</title>
-<style>
-table {
-    border-collapse :collapse;
-}
-table, th, td {
-    border : 1px solid #1c1b18;
-}
-</style>
 </head>
 <body>
+    <div class="header">
+        <img src="/images/steamlogo.png" alt="logosteam" class="logo">
+        <h1>Katalog Game Steam Ihsan </h1>
+    </div>
+
+    <form action="/" method="GET" >
+        <input type="submit" value="Back" class="back-button">
+    </form>
+
     <form action="/" method="POST" class="find">
         <input type="text" name="find" class="search-bar" placeholder="Find by Game Name" required>
         <input type= "submit" class="search-button" value="Find">
-    </form>
-    <h1>Katalog Game Steam Ihsan</h1>
-    <form action="/" method="GET">
-        <input type="submit" value="Back">
     </form>
 
     <div class="wrapper">
@@ -30,6 +28,7 @@ table, th, td {
                 <th>No.</th>
                 <th>Nama Game</th>
                 <th>Tanggal rilis</th>
+                <th>Kategori</th>
                 <th>Nama developer</th>
                 <th>Lokasi developer</th>
                 <th>Nama publisher</th>
@@ -40,6 +39,7 @@ table, th, td {
                         <td> <%= i %> </td>
                         <td> <%= game.name %> </td>
                         <td> <%= game.release_date %> </td>
+                        <td> <%= game.category %> </td>
                         <td> <%= game.developer_name %> </td>
                         <td> <%= game.developer_location %> </td>
                         <td> <%= game.publisher_name %> </td>
@@ -49,5 +49,9 @@ table, th, td {
                     <% }); %>
         </table>
     </div>
+
+    <footer class="footer">
+        <p>Created by &copy; Ihsanuddin Dwi P</p>
+    </footer>
 </body>
 </html>

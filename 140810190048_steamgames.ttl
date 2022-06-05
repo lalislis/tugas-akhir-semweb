@@ -94,18 +94,21 @@
 :Developer1 rdf:type owl:NamedIndividual ;
             :developed :Game1 ,
                        :Game2 ;
+            :developer-location "USA" ;
             :developer-name "Valve" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer2
 :Developer2 rdf:type owl:NamedIndividual ;
             :developed :Game3 ;
+            :developer-location "USA" ;
             :developer-name "Firaxis Games" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Developer3
 :Developer3 rdf:type owl:NamedIndividual ;
             :developed :Game4 ;
+            :developer-location "USA" ;
             :developer-name "Gearbox Software" .
 
 
@@ -114,6 +117,7 @@
                      :Developer ;
             :developed :Game5 ,
                        :Game6 ;
+            :developer-location "Canada" ;
             :developer-name "Digital Extremes" .
 
 
@@ -122,7 +126,9 @@
                 :Games ;
        :developedBy :Developer1 ;
        :publishedBy :Publisher1 ;
-       :name "Counter Strike : Global Offensive" .
+       :category "FPS" ;
+       :name "Counter Strike : Global Offensive" ;
+       :release_date "2012-08-12" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game2
@@ -130,7 +136,9 @@
                 :Games ;
        :developedBy :Developer1 ;
        :publishedBy :Publisher1 ;
-       :name "Dota 2" .
+       :category "MOBA" ;
+       :name "Dota 2" ;
+       :release_date "2013-07-10" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game3
@@ -138,7 +146,9 @@
                 :Games ;
        :developedBy :Developer2 ;
        :publishedBy :Publisher2 ;
-       :name "XCOM 2" .
+       :category "Turn-based tactics" ;
+       :name "XCOM 2" ;
+       :release_date "2016-05-02" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game4
@@ -146,7 +156,9 @@
                 :Games ;
        :developedBy :Developer3 ;
        :publishedBy :Publisher2 ;
-       :name "Borderlands 3" .
+       :category "Action RP" ;
+       :name "Borderlands 3" ;
+       :release_date "2020-03-13" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game5
@@ -154,7 +166,9 @@
                 :Games ;
        :developedBy :Developer4 ;
        :publishedBy :Publisher3 ;
-       :name "Warframe" .
+       :category "Action RP" ;
+       :name "Warframe" ;
+       :release_date "2013-03-26" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Game6
@@ -162,13 +176,16 @@
                 :Games ;
        :developedBy :Developer4 ;
        :publishedBy :Publisher2 ;
-       :name "Bioshock 2" .
+       :category "FPS" ;
+       :name "Bioshock 2" ;
+       :release_date "2010-02-09" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Publisher1
 :Publisher1 rdf:type owl:NamedIndividual ;
             :published :Game1 ,
                        :Game2 ;
+            :publisher-location "USA" ;
             :publisher-name "Valve" .
 
 
@@ -177,12 +194,14 @@
             :published :Game3 ,
                        :Game4 ,
                        :Game6 ;
+            :publisher-location "USA" ;
             :publisher-name "2K" .
 
 
 ###  http://www.ihsansteamgames.com/ontologies/2022/4/steam-games#Publisher3
 :Publisher3 rdf:type owl:NamedIndividual ;
             :published :Game5 ;
+            :publisher-location "Canada" ;
             :publisher-name "Digital Extremes" .
 
 

@@ -1,8 +1,108 @@
+:root{
+  --color1: #2a475e;
+  --color2: #c7d5e0;
+  --color3: #788085;
+  --color4: #66c0f4;
+  --color5: #1b2838;
+}
+*{
+  background-color: var(--color1);
+  color: var(--color2);
+}
+html, body{
+  padding: 0;
+  margin: 0;
+}
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+table {
+  border-collapse :collapse;
+  width: 80%;
+}
+
+th{
+  font-size: 1.2em;
+}
+
+th a{
+  background-color: var(--color2);
+  color: var(--color1);
+}
+
+table, th, td {
+  background-color: var(--color2);
+  color: var(--color1);
+  border : 1px solid var(--color3);
+  padding : 15px ;
+}
+
+th:hover, th a:hover{
+  background-color: var(--color5);
+  color: var(--color2);
+}
+
+.find{
+  margin-bottom: 20px;
+  margin-left: 185px;
+}
+
+.search-bar{
+  background-color: var(--color2);
+  color: var(--color1);
+  width: 350px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.search-button{
+  background-color: var(--color4);
+  color: var(--color1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.back-button{
+  margin-left: 185px;
+  margin-bottom: 20px;
+  background-color: var(--color4);
+  color: var(--color1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.logo{
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
